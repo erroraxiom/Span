@@ -1,0 +1,130 @@
+/*
+ * Copyright (c) 2025-2026 Erroraxiom
+ *
+ * This file is part of Span - a minimalist pomodoro timer for Android.
+ *
+ * Span is free software: you can redistribute it and/or modify it under the terms of the GNU
+ * General Public License as published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * Span is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+ * the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+ * Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with Span.
+ * If not, see <https://www.gnu.org/licenses/>.
+ */
+
+package com.erroraxiom.span.ui.theme
+
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ListItemColors
+import androidx.compose.material3.ListItemDefaults
+import androidx.compose.material3.MaterialTheme.colorScheme
+import androidx.compose.material3.SwitchColors
+import androidx.compose.material3.SwitchDefaults
+import androidx.compose.material3.TopAppBarColors
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+
+val primaryLight = Color(0xFF8F4C38)
+val onPrimaryLight = Color(0xFFFFFFFF)
+val primaryContainerLight = Color(0xFFFFDBD1)
+val onPrimaryContainerLight = Color(0xFF723523)
+val secondaryLight = Color(0xFF77574E)
+val onSecondaryLight = Color(0xFFFFFFFF)
+val secondaryContainerLight = Color(0xFFFFDBD1)
+val onSecondaryContainerLight = Color(0xFF5D4037)
+val tertiaryLight = Color(0xFF6C5D2F)
+val onTertiaryLight = Color(0xFFFFFFFF)
+val tertiaryContainerLight = Color(0xFFF5E1A7)
+val onTertiaryContainerLight = Color(0xFF534619)
+val errorLight = Color(0xFFBA1A1A)
+val onErrorLight = Color(0xFFFFFFFF)
+val errorContainerLight = Color(0xFFFFDAD6)
+val onErrorContainerLight = Color(0xFF93000A)
+val backgroundLight = Color(0xFFFFF8F6)
+val onBackgroundLight = Color(0xFF231917)
+val surfaceLight = Color(0xFFFFF8F6)
+val onSurfaceLight = Color(0xFF231917)
+val surfaceVariantLight = Color(0xFFF5DED8)
+val onSurfaceVariantLight = Color(0xFF53433F)
+val outlineLight = Color(0xFF85736E)
+val outlineVariantLight = Color(0xFFD8C2BC)
+val scrimLight = Color(0xFF000000)
+val inverseSurfaceLight = Color(0xFF392E2B)
+val inverseOnSurfaceLight = Color(0xFFFFEDE8)
+val inversePrimaryLight = Color(0xFFFFB5A0)
+val surfaceDimLight = Color(0xFFE8D6D2)
+val surfaceBrightLight = Color(0xFFFFF8F6)
+val surfaceContainerLowestLight = Color(0xFFFFFFFF)
+val surfaceContainerLowLight = Color(0xFFFFF1ED)
+val surfaceContainerLight = Color(0xFFFCEAE5)
+val surfaceContainerHighLight = Color(0xFFF7E4E0)
+val surfaceContainerHighestLight = Color(0xFFF1DFDA)
+
+val primaryDark = Color(0xFFFFB5A0)
+val onPrimaryDark = Color(0xFF561F0F)
+val primaryContainerDark = Color(0xFF723523)
+val onPrimaryContainerDark = Color(0xFFFFDBD1)
+val secondaryDark = Color(0xFFE7BDB2)
+val onSecondaryDark = Color(0xFF442A22)
+val secondaryContainerDark = Color(0xFF5D4037)
+val onSecondaryContainerDark = Color(0xFFFFDBD1)
+val tertiaryDark = Color(0xFFD8C58D)
+val onTertiaryDark = Color(0xFF3B2F05)
+val tertiaryContainerDark = Color(0xFF534619)
+val onTertiaryContainerDark = Color(0xFFF5E1A7)
+val errorDark = Color(0xFFFFB4AB)
+val onErrorDark = Color(0xFF690005)
+val errorContainerDark = Color(0xFF93000A)
+val onErrorContainerDark = Color(0xFFFFDAD6)
+val backgroundDark = Color(0xFF1A110F)
+val onBackgroundDark = Color(0xFFF1DFDA)
+val surfaceDark = Color(0xFF1A110F)
+val onSurfaceDark = Color(0xFFF1DFDA)
+val surfaceVariantDark = Color(0xFF53433F)
+val onSurfaceVariantDark = Color(0xFFD8C2BC)
+val outlineDark = Color(0xFFA08C87)
+val outlineVariantDark = Color(0xFF53433F)
+val scrimDark = Color(0xFF000000)
+val inverseSurfaceDark = Color(0xFFF1DFDA)
+val inverseOnSurfaceDark = Color(0xFF392E2B)
+val inversePrimaryDark = Color(0xFF8F4C38)
+val surfaceDimDark = Color(0xFF1A110F)
+val surfaceBrightDark = Color(0xFF423734)
+val surfaceContainerLowestDark = Color(0xFF140C0A)
+val surfaceContainerLowDark = Color(0xFF231917)
+val surfaceContainerDark = Color(0xFF271D1B)
+val surfaceContainerHighDark = Color(0xFF322825)
+val surfaceContainerHighestDark = Color(0xFF3D322F)
+
+object CustomColors {
+    val black = Color.Black
+
+    @OptIn(ExperimentalMaterial3Api::class)
+    val topBarColors: TopAppBarColors
+        @Composable get() =
+            TopAppBarDefaults.topAppBarColors(
+                containerColor = colorScheme.surfaceContainerLow,
+                scrolledContainerColor = colorScheme.surfaceContainerLow
+            )
+
+    @OptIn(ExperimentalMaterial3Api::class)
+    val detailPaneTopBarColors: TopAppBarColors
+        @Composable get() =
+            TopAppBarDefaults.topAppBarColors(
+                containerColor = colorScheme.surfaceContainer,
+                scrolledContainerColor = colorScheme.surfaceContainer
+            )
+
+    val listItemColors: ListItemColors
+        @Composable get() =
+            ListItemDefaults.segmentedColors(containerColor = colorScheme.surfaceBright)
+
+    val switchColors: SwitchColors
+        @Composable get() = SwitchDefaults.colors(
+            checkedIconColor = colorScheme.primary,
+        )
+}

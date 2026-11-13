@@ -1,0 +1,32 @@
+<!--
+  ~ Copyright (c) 2025-2026 Erroraxiom
+  ~
+  ~ This file is part of Span - a minimalist pomodoro timer for Android.
+  ~
+  ~ Span is free software: you can redistribute it and/or modify it under the terms of the GNU
+  ~ General Public License as published by the Free Software Foundation, either version 3 of the
+  ~ License, or (at your option) any later version.
+  ~
+  ~ Span is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+  ~ the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+  ~ Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License along with Span.
+  ~ If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.18"
+        android:scaleY="0.18"
+        android:translateX="21.55"
+        android:translateY="21.75">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M 134.794,0 L 253.526,0 L 267.876,0 L 267.876,13.637 L 267.876,88.378 L 97.718,88.378 C 94.893,64.635 100.849,40.073 115.585,19.789 C 121.118,12.174 127.606,5.55 134.794,0 Z M 96.911,245.32 C 40.067,212.501 3.841,153.392 0,88.378 L 97.718,88.378 C 99.634,104.482 105.59,120.209 115.585,133.967 C 131.439,155.788 155.144,169.474 180.661,173.063 L 180.661,270.909 C 151.638,268.892 122.966,260.363 96.911,245.32 Z M 225.743,358.287 L 107.011,358.287 L 92.661,358.287 L 92.661,344.65 L 92.661,269.909 L 262.819,269.909 C 265.644,293.652 259.688,318.214 244.952,338.498 C 239.419,346.113 232.931,352.737 225.743,358.287 Z M 263.626,112.967 C 320.47,145.786 356.696,204.895 360.537,269.909 L 262.819,269.909 C 260.903,253.805 254.947,238.078 244.952,224.32 C 229.098,202.499 205.393,188.813 179.876,185.224 L 179.876,87.378 C 208.899,89.395 237.571,97.924 263.626,112.967 Z" />
+    </group>
+</vector>

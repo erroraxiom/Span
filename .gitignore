@@ -1,0 +1,42 @@
+# Android / Gradle
+.gradle/
+.gradle
+**/build/
+build/
+local.properties
+.externalNativeBuild/
+.cxx/
+
+# Kotlin
+.kotlin/
+
+# Android build outputs
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Signing keys and certificates
+*.jks
+*.jks.*
+*.keystore
+*.keystore.*
+*.pem
+*.p12
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+gradle.properties.local
+signing.properties
+
+# IDE files
+*.iml
+.idea/
+.vscode/
+.DS_Store
+
+# Android Studio generated files
+/captures/
+.externalNativeBuild/
