@@ -50,39 +50,41 @@ actual fun SpanTheme(
         seedColor != Color.White -> {
             rememberDynamicColorScheme(
                 seedColor = seedColor,
-                isDark = darkTheme,
-                isAmoled = isAmoled
+                isDark = darkTheme
             )
         }
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            remember(context, darkTheme, isAmoled) {
-                val dynamicScheme = if (darkTheme) {
+            remember(context, darkTheme) {
+                if (darkTheme) {
                     dynamicDarkColorScheme(context)
                 } else {
                     dynamicLightColorScheme(context)
-                }
-                if (isAmoled) {
-                    dynamicScheme.copy(
-                        background = Color.Black,
-                        surface = Color.Black,
-                        surfaceDim = Color.Black,
-                        surfaceContainerLowest = Color.Black,
-                        surfaceContainerLow = Color(0xFF0E0E0E),
-                        surfaceContainer = Color(0xFF161616),
-                        surfaceContainerHigh = Color(0xFF1F1F1F),
-                        surfaceContainerHighest = Color(0xFF282828)
-                    )
-                } else {
-                    dynamicScheme
                 }
             }
         }
         else -> {
             rememberDynamicColorScheme(
                 seedColor = Color(0xFFFFA79B),
-                isDark = darkTheme,
-                isAmoled = isAmoled
+                isDark = darkTheme
             )
+        }
+    }
+    val colorScheme = remember(baseColorScheme, isAmoled) {
+        if (isAmoled) {
+            baseColorScheme.copy(
+                background = Color.Black,
+                surface = Color.Black,
+                surfaceVariant = Color.Black,
+                surfaceDim = Color.Black,
+                surfaceBright = Color.Black,
+                surfaceContainerLowest = Color.Black,
+                surfaceContainerLow = Color.Black,
+                surfaceContainer = Color.Black,
+                surfaceContainerHigh = Color.Black,
+                surfaceContainerHighest = Color.Black
+            )
+        } else {
+            baseColorScheme
         }
     }
 
@@ -108,7 +110,7 @@ actual fun SpanTheme(
         LocalAppFonts provides appFonts
     ) {
         MaterialExpressiveTheme(
-            colorScheme = baseColorScheme,
+            colorScheme = colorScheme,
             shapes = SpanShapes,
             typography = appTypography,
             motionScheme = expressiveMotionScheme,

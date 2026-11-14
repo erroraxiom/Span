@@ -531,55 +531,23 @@ private fun TimerDialSection(
     onAction: (TimerAction) -> Unit,
     onShowRunningResetSnackbar: () -> Unit
 ) {
-    val progressState = progressFlow.collectAsStateWithLifecycle()
-    val progress = remember(progressState) { { progressState.value } }
-
     val motionScheme = motionScheme
     val haptic = LocalHapticFeedback.current
     val fonts = LocalAppFonts.current
     val density = LocalDensity.current
-    val strokePx = remember(density) { with(density) { 16.dp.toPx() } }
-    val wavyStroke = remember(strokePx) { Stroke(width = strokePx, cap = StrokeCap.Round) }
 
     val isInfinite = infiniteFocus && timerMode == TimerMode.FOCUS
 
     Column(horizontalAlignment = CenterHorizontally) {
         Box(contentAlignment = Alignment.Center) {
             if (!isInfinite) {
-                if (timerMode == TimerMode.FOCUS) {
-                    CircularProgressIndicator(
-                        progress = progress,
-                        modifier = Modifier
-                            .widthIn(max = 310.dp)
-                            .fillMaxWidth(0.84f)
-                            .aspectRatio(1f),
-                        color = primary,
-                        trackColor = secondaryContainer,
-                        strokeWidth = 16.dp,
-                        gapSize = 10.dp
-                    )
-                } else {
-                    val amplitude by animateFloatAsState(
-                        targetValue = if (timerRunning) 1f else 0f,
-                        animationSpec = motionScheme.slowEffectsSpec()
-                    )
-                    val waveSpeed = if (timerRunning) 20.dp else 0.dp
-                    CircularWavyProgressIndicator(
-                        progress = progress,
-                        modifier = Modifier
-                            .widthIn(max = 310.dp)
-                            .fillMaxWidth(0.84f)
-                            .aspectRatio(1f),
-                        color = primary,
-                        trackColor = secondaryContainer,
-                        stroke = wavyStroke,
-                        trackStroke = wavyStroke,
-                        wavelength = 60.dp,
-                        waveSpeed = waveSpeed,
-                        amplitude = { amplitude },
-                        gapSize = 10.dp
-                    )
-                }
+                TimerProgressIndicator(
+                    timerMode = timerMode,
+                    timerRunning = timerRunning,
+                    primary = primary,
+                    secondaryContainer = secondaryContainer,
+                    progressFlow = progressFlow
+                )
             }
 
             var expanded by remember { mutableStateOf(showBrandTitle) }
@@ -649,6 +617,58 @@ private fun TimerDialSection(
                 }
             }
         }
+    }
+}
+
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
+@Composable
+private fun TimerProgressIndicator(
+    timerMode: TimerMode,
+    timerRunning: Boolean,
+    primary: Color,
+    secondaryContainer: Color,
+    progressFlow: StateFlow<Float>
+) {
+    val progressState = progressFlow.collectAsStateWithLifecycle()
+    val progress = remember(progressState) { { progressState.value } }
+    val motionScheme = motionScheme
+    val density = LocalDensity.current
+    val strokePx = remember(density) { with(density) { 16.dp.toPx() } }
+    val wavyStroke = remember(strokePx) { Stroke(width = strokePx, cap = StrokeCap.Round) }
+
+    if (timerMode == TimerMode.FOCUS) {
+        CircularProgressIndicator(
+            progress = progress,
+            modifier = Modifier
+                .widthIn(max = 310.dp)
+                .fillMaxWidth(0.84f)
+                .aspectRatio(1f),
+            color = primary,
+            trackColor = secondaryContainer,
+            strokeWidth = 16.dp,
+            gapSize = 10.dp
+        )
+    } else {
+        val amplitude by animateFloatAsState(
+            targetValue = if (timerRunning) 1f else 0f,
+            animationSpec = motionScheme.slowEffectsSpec()
+        )
+        val waveSpeed = if (timerRunning) 20.dp else 0.dp
+        CircularWavyProgressIndicator(
+            progress = progress,
+            modifier = Modifier
+                .widthIn(max = 310.dp)
+                .fillMaxWidth(0.84f)
+                .aspectRatio(1f),
+            color = primary,
+            trackColor = secondaryContainer,
+            stroke = wavyStroke,
+            trackStroke = wavyStroke,
+            wavelength = 60.dp,
+            waveSpeed = waveSpeed,
+            amplitude = { amplitude },
+            gapSize = 10.dp
+        )
     }
 }
 

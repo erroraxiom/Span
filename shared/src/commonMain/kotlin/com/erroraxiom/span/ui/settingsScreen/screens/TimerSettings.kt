@@ -23,6 +23,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -38,6 +39,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.LargeFlexibleTopAppBar
 import androidx.compose.material3.ListItem
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SliderState
 import androidx.compose.material3.SnackbarDuration
@@ -93,6 +95,8 @@ import span.shared.generated.resources.arrow_back
 import span.shared.generated.resources.back
 import span.shared.generated.resources.check
 import span.shared.generated.resources.clear
+import span.shared.generated.resources.info
+import span.shared.generated.resources.infinite_focus_mode_hint
 import span.shared.generated.resources.mobile_lock_portrait
 import span.shared.generated.resources.secure_aod
 import span.shared.generated.resources.secure_aod_desc
@@ -325,6 +329,27 @@ fun TimerSettings(
                                 }
                             }
                         }
+                    }
+                }
+
+                item(key = "infinite_focus_note") {
+                    Row(
+                        horizontalArrangement = Arrangement.spacedBy(12.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
+                    ) {
+                        val noteColor = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f)
+                        Icon(
+                            painter = painterResource(Res.drawable.info),
+                            contentDescription = null,
+                            tint = noteColor,
+                            modifier = Modifier.size(20.dp)
+                        )
+                        Text(
+                            text = stringResource(Res.string.infinite_focus_mode_hint),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = noteColor
+                        )
                     }
                 }
 
