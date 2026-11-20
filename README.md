@@ -2,7 +2,7 @@
 
 **Focus your time. Understand your progress.**
 
-![Span Banner](screenshots/banner.png)
+![Span Banner](screenshots/banner.webp)
 
 Span is a minimalist Pomodoro timer for Android, built to make focused work simple and help you understand how you spend your time.
 
@@ -10,8 +10,8 @@ Span is a minimalist Pomodoro timer for Android, built to make focused work simp
 
 | | | |
 |:---:|:---:|:---:|
-| ![Span preview](screenshots/preview.png) | ![Span preview 1](screenshots/preview1.png) | ![Span preview 2](screenshots/preview2.png) |
-| ![Span preview 3](screenshots/preview3.png) | ![Span preview 4](screenshots/preview4.png) | ![Span preview 5](screenshots/preview5.png) |
+| ![Span preview](screenshots/preview.webp) | ![Span preview 1](screenshots/preview1.webp) | ![Span preview 2](screenshots/preview2.webp) |
+| ![Span preview 3](screenshots/preview3.webp) | ![Span preview 4](screenshots/preview4.webp) | ![Span preview 5](screenshots/preview5.webp) |
 
 ## Features
 
